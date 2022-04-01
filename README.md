@@ -1,13 +1,26 @@
-# Pax  
-[![Maintainability](https://api.codeclimate.com/v1/badges/337ba69b4fe369201c75/maintainability)](https://codeclimate.com/github/pax-app/Pax/maintainability)  
-  
+# Boiler-Plate
 
-Microsserviço responsável pelos contratos cliente-prestador.
 
-## Colocando no ar
+Flask application boiler-plate.
 
-Com o Docker e Docker-Compose instalados, basta apenas utilizar os comandos:
+## Running the application
+
+With Docker and Docker-Compose installed, follow the instructions below to run the application.:
 
 ```shell
-    sudo docker-compose up
+    docker-compose up
+```
+
+## Installing pre-commit tool
+
+You'll need to install the pre-commit tool locally to run the tests.
+
+```shell
+    pip install pre-commit
+```
+
+Then, install the configured hooks in the `.pre-commit-config.yaml` file.
+
+```shell
+    pre-commit install
 ```
