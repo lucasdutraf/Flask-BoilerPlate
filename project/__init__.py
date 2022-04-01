@@ -1,7 +1,9 @@
 import os
+
 from flask import Flask
-from project.api.views import example_blueprint
+
 from database_singleton import Singleton
+from project.api.views import example_blueprint
 
 
 # instantiate the app
@@ -10,7 +12,7 @@ def create_app(script_info=None):
     app = Flask(__name__)
 
     # Set Configuration
-    app_settings = os.getenv('APP_SETTINGS')
+    app_settings = os.getenv("APP_SETTINGS")
     app.config.from_object(app_settings)
 
     db = Singleton().database_connection()
@@ -20,6 +22,6 @@ def create_app(script_info=None):
     migrate.init_app(app, db)
 
     # register blueprints
-    app.register_blueprint(example_blueprint, url_prefix='/example')
+    app.register_blueprint(example_blueprint, url_prefix="/example")
 
     return app

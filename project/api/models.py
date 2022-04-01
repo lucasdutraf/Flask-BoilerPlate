@@ -4,7 +4,7 @@ db = Singleton().database_connection()
 
 
 class Example(db.Model):
-    __tablename__ = 'Example'
+    __tablename__ = "Example"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     example = db.Column(db.String(255), nullable=False)
@@ -14,6 +14,6 @@ class Example(db.Model):
 
     def to_json(self):
         return {
-            'id': self.id,
-            'example': self.example,
+            "id": self.id,
+            "example": self.example,
         }

@@ -1,7 +1,9 @@
 from __future__ import annotations
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+
 from typing import Optional
+
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
 
 
 class SingletonMeta(type):
