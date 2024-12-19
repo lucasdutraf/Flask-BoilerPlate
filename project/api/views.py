@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint
 
 from database_singleton import Singleton
 from project.api.utils.creation_utils import Utils
@@ -8,6 +8,6 @@ db = Singleton().database_connection()
 utils = Utils()
 
 
-@example_blueprint.route("/ping", methods=["GET"])
+@example_blueprint.get("/ping")
 def pong():
-    return jsonify({"message": "works!"}), 200
+    return {"message": "works!"}, 200
