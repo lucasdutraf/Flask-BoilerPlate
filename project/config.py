@@ -1,6 +1,7 @@
 import os
 
 
+# https://flask.palletsprojects.com/en/stable/config/#development-production
 class BaseConfig:
     """Base configuration"""
 
@@ -11,6 +12,7 @@ class BaseConfig:
 class DevelopmentConfig(BaseConfig):
     """Development configuration"""
 
+    DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 
@@ -26,5 +28,5 @@ class ProductionConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 
-class HomologationConfig(BaseConfig):
+class StageConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")

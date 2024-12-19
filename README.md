@@ -1,6 +1,5 @@
 # Boiler-Plate
 
-
 Flask application boiler-plate.
 
 ## Running the application
@@ -23,4 +22,10 @@ Then, install the configured hooks in the `.pre-commit-config.yaml` file.
 
 ```shell
     pre-commit install
+```
+
+## Access web container
+
+```shell
+    docker-compose exec web sh
 ```

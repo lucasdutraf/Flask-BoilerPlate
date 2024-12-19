@@ -25,4 +25,9 @@ def create_app(script_info=None):
     # register blueprints
     app.register_blueprint(example_blueprint, url_prefix="/example")
 
+    # shell context for flask cli
+    @app.shell_context_processor
+    def shell_context():
+        return {"app": app, "db": db}
+
     return app

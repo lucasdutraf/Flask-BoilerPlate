@@ -20,6 +20,7 @@ class Singleton(metaclass=SingletonMeta):
         db = SQLAlchemy()
         return db
 
+    # https://flask-migrate.readthedocs.io/en/latest/
     def migration(self):
         migrate = Migrate()
         return migrate
