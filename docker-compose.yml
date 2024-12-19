@@ -13,6 +13,6 @@ services:
       - FLASK_APP=project/__init__.py
       - FLASK_ENV=development
       - APP_SETTINGS=project.config.DevelopmentConfig
-      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@db:5432/requestlenditdb_dev
-      - DATABASE_TEST_URL=postgresql+psycopg2://postgres:postgres@db:5432/requestlenditdb_test
+      - DATABASE_URL=
+      - DATABASE_TEST_URL=
     command: python manage.py run -h 0.0.0.0
