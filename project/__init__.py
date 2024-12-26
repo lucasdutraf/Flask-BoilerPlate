@@ -1,9 +1,12 @@
 import os
 
 from flask import Flask
+from flask_migrate import Migrate
 
-from database_singleton import Singleton
+from project.api.models import db
 from project.api.views import example_blueprint
+
+migrate = Migrate()
 
 
 # instantiate the app
@@ -16,11 +19,11 @@ def create_app(script_info=None):
     app.config.from_object(app_settings)
 
     # Set up Database
-    db = Singleton().database_connection()
-    migrate = Singleton().migration()
-
     db.init_app(app)
     migrate.init_app(app, db)
+
+    with app.app_context():
+        db.create_all()
 
     # register blueprints
     app.register_blueprint(example_blueprint, url_prefix="/example")

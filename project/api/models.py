@@ -1,6 +1,8 @@
-from database_singleton import Singleton
+from flask_sqlalchemy import SQLAlchemy
 
-db = Singleton().database_connection()
+from database_singleton import Base
+
+db = SQLAlchemy(model_class=Base)
 
 
 class Example(db.Model):
